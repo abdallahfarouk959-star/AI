@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ملخص تعلم الآلة - استعداد للمقابلة (هواوي)</title>
+    <style>
+        :root {
+            --primary-color: #e4002b; /* Huawei Red */
+            --secondary-color: #2c3e50;
+            --bg-color: #f8f9fa;
+            --text-color: #333;
+            --light-gray: #e9ecef;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        header p {
+            margin-top: 10px;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .accordion {
+            background-color: white;
+            color: var(--secondary-color);
+            cursor: pointer;
+            padding: 20px;
+            width: 100%;
+            border: 1px solid var(--light-gray);
+            border-radius: 8px;
+            text-align: right;
+            outline: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .accordion:hover, .active {
+            background-color: var(--light-gray);
+            border-color: #cbd3da;
+        }
+        .accordion::after {
+            content: '\25BC';
+            font-size: 1rem;
+            color: var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+        .active::after {
+            transform: rotate(180deg);
+        }
+        .panel {
+            padding: 0 20px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            border-radius: 0 0 8px 8px;
+            border: 1px solid transparent;
+            border-top: none;
+        }
+        .panel.show {
+            border-color: var(--light-gray);
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .term {
+            color: var(--primary-color);
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+        .en-term {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #f1f3f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: #495057;
+        }
+        ul {
+            padding-right: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        th, td {
+            border: 1px solid var(--light-gray);
+            padding: 10px;
+            text-align: right;
+        }
+        th {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            color: #777;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>مراجعة شاملة لتعلم الآلة 🚀</h1>
+    <p>ملخص تفاعلي لمحتوى Huawei استعداداً لمقابلات العمل (Machine Learning Interview Prep)</p>
+</header>
+
+<div class="container">
+    <p style="font-size: 1.1rem; text-align: center; margin-bottom: 30px;">
+        أهلاً بك يا عبد الله! لقد صممت هذه الصفحة لتكون مرجعك السريع والمنظم لكل مفاهيم الـ Machine Learning بناءً على المنهج. اضغط على أي سؤال لفتح الإجابة.
+    </p>
+
+    <button class="accordion">1. ما هي الأنواع الرئيسية لتعلم الآلة (Types of ML)؟</button>
+    <div class="panel">
+        <ul>
+            <li><span class="term">التعلم الخاضع للإشراف</span> <span class="en-term">(Supervised Learning)</span>: تدريب النموذج باستخدام بيانات مصنفة (مرفق بها الإجابة الصحيحة/Labels). يُستخدم في مهام مثل التصنيف (Classification) والانحدار/التوقع (Regression).</li>
+            <li><span class="term">التعلم غير الخاضع للإشراف</span> <span class="en-term">(Unsupervised Learning)</span>: تدريب النموذج ببيانات غير مصنفة لاستخراج الأنماط، مثل التجميع (Clustering) لمعرفة المجموعات المتشابهة.</li>
+            <li><span class="term">التعلم شبه الخاضع للإشراف</span> <span class="en-term">(Semi-supervised Learning)</span>: استخدام كمية صغيرة من البيانات المصنفة مع كمية كبيرة من البيانات غير المصنفة (لتوفير وقت وجهد التصنيف اليدوي).</li>
+            <li><span class="term">التعلم المعزز</span> <span class="en-term">(Reinforcement Learning)</span>: يتعلم النظام من خلال التفاعل مع البيئة بناءً على نظام المكافآت والعقوبات (Rewards) للوصول لأفضل قرار (Best Action).</li>
+        </ul>
+    </div>
+
+    <button class="accordion">2. ما هي خطوات بناء نموذج تعلم الآلة (ML Process)؟</button>
+    <div class="panel">
+        <ol>
+            <li><span class="term">تجهيز البيانات</span> <span class="en-term">(Data Preparation)</span>: جمع البيانات وتقسيمها إلى (Training, Validation, Test sets).</li>
+            <li><span class="term">تنظيف البيانات</span> <span class="en-term">(Data Cleansing)</span>: التعامل مع القيم المفقودة (Missing values)، التخلص من الضوضاء (Noise)، وتوحيد البيانات. (يستغرق العلماء 60% من وقتهم في هذه الخطوة).</li>
+            <li><span class="term">استخراج واختيار الميزات</span> <span class="en-term">(Feature Extraction & Selection)</span>: تقليل الأبعاد (Dimensionality Reduction) واختيار أهم العوامل لتجنب تعقيد النموذج وتوفير وقت التدريب.</li>
+            <li><span class="term">تدريب النموذج</span> <span class="en-term">(Model Training)</span>: تطبيق الخوارزمية وتحديث الأوزان (Weights).</li>
+            <li><span class="term">تقييم النموذج</span> <span class="en-term">(Model Evaluation)</span>: استخدام الـ Test/Validation set لمعرفة دقة النموذج (Generalization capability).</li>
+            <li><span class="term">نشر النموذج</span> <span class="en-term">(Model Deployment)</span>: دمجه في بيئة العمل الحقيقية.</li>
+        </ol>
+    </div>
+
+    <button class="accordion">3. اشرح الفرق بين Overfitting و Underfitting؟</button>
+    <div class="panel">
+        <ul>
+            <li><span class="term">نقص التخصيص</span> <span class="en-term">(Underfitting)</span>: خطأ التدريب (Training error) كبير جداً. النموذج بسيط للغاية ولم يتمكن من تعلم خصائص البيانات. (الحل: استخدام نموذج أعقد أو زيادة مدة التدريب).</li>
+            <li><span class="term">فرط التخصيص / الحفظ</span> <span class="en-term">(Overfitting)</span>: خطأ التدريب صغير جداً ولكن خطأ التعميم (Generalization error) على بيانات جديدة كبير جداً. النموذج حفظ البيانات بالضوضاء الموجودة بها. (الحل: تبسيط النموذج، التوقف المبكر، أو استخدام Regularization).</li>
+        </ul>
+        <p><strong>ملاحظة:</strong> الخطأ في التوقع يتكون من: <span class="en-term">Bias² + Variance + Ineliminable error</span>. الـ Bias يعبر عن مدى بعد التوقع عن القيمة الحقيقية، والـ Variance يعبر عن حساسية النموذج لتغيرات البيانات.</p>
+    </div>
+
+    <button class="accordion">4. ما هو الانحدار الاشتقاقي (Gradient Descent) وأنواعه؟</button>
+    <div class="panel">
+        <p>هو خوارزمية تحسين تُستخدم لتقليل دالة التكلفة (Loss function) للوصول لأفضل معلمات (Parameters) للنموذج من خلال التحرك عكس اتجاه الانحدار (Negative gradient direction).</p>
+        <ul>
+            <li><span class="term">Batch Gradient Descent (BGD)</span>: يستخدم <strong>كل البيانات</strong> في كل خطوة تحديث. مستقر جداً ولكنه يستهلك موارد حسابية ضخمة وبطيء.</li>
+            <li><span class="term">Stochastic Gradient Descent (SGD)</span>: يستخدم <strong>عينة عشوائية واحدة</strong> في كل خطوة. سريع ولكنه غير مستقر (يتذبذب كثيراً).</li>
+            <li><span class="term">Mini-batch Gradient Descent (MBGD)</span>: توازن بين الاثنين، يستخدم <strong>مجموعة صغيرة (Batch)</strong> في كل خطوة.</li>
+        </ul>
+    </div>
+
+    <button class="accordion">5. ما الفرق بين المعلمات (Parameters) والمعلمات الفائقة (Hyperparameters)؟</button>
+    <div class="panel">
+        <ul>
+            <li><span class="term">المعلمات</span> <span class="en-term">(Parameters)</span>: قيم يتعلمها النموذج <strong>تلقائياً</strong> من البيانات أثناء التدريب (مثل الأوزان Weights في الشبكات العصبية).</li>
+            <li><span class="term">المعلمات الفائقة</span> <span class="en-term">(Hyperparameters)</span>: إعدادات يضبطها <strong>المبرمج يدوياً</strong> قبل التدريب للتحكم في عملية التعلم (مثل Learning Rate، و K في الـ KNN، وعدد الأشجار في Random Forest). يمكن البحث عنها باستخدام طرق مثل Grid Search أو Random Search.</li>
+        </ul>
+    </div>
+
+    <button class="accordion">6. كيف يعمل التحقق المتقاطع (Cross-Validation) ولماذا نستخدمه؟</button>
+    <div class="panel">
+        <p>يُستخدم لتقييم أداء النموذج بدقة وتجنب الـ Overfitting، خاصة عند قلة البيانات.</p>
+        <p>طريقة <span class="en-term">k-fold CV</span> تعتمد على تقسيم البيانات الكلية إلى k مجموعات متساوية. يتم أخذ مجموعة واحدة كبيانات تحقق (Validation Set) والباقي للتدريب. تتكرر العملية k مرات، وفي كل مرة تتغير مجموعة التحقق. يتم حساب متوسط الدقة لجميع الـ k نماذج كتقييم نهائي.</p>
+    </div>
+
+    <button class="accordion">7. أشهر خوارزميات التعلم الخاضع للإشراف (Supervised Algorithms)</button>
+    <div class="panel">
+        <ul>
+            <li><span class="term">الانحدار الخطي</span> <span class="en-term">(Linear Regression)</span>: يستخدم للتوقع بقيم مستمرة (Continuous). للحد من الـ Overfitting نستخدم Regularization مثل Ridge (L2-norm) و Lasso (L1).</li>
+            <li><span class="term">الانحدار اللوجستي</span> <span class="en-term">(Logistic Regression)</span>: يستخدم للتصنيف الثنائي (Binary Classification). يستخدم دالة Sigmoid. في حال التصنيف المتعدد (Multi-class)، نستخدم دالة <span class="en-term">Softmax</span>.</li>
+            <li><span class="term">أشجار القرار</span> <span class="en-term">(Decision Tree)</span>: تتكون من عقد (Nodes). يتم التقسيم بناءً على مدى النقاء (Purity) باستخدام الإنتروبي (Entropy) أو Gini. قد يحدث لها Overfitting لذا تحتاج لعملية تقليم (Pruning).</li>
+            <li><span class="term">آلة المتجهات الداعمة</span> <span class="en-term">(SVM)</span>: هدفها إيجاد الخط أو المستوى الفائق (Hyperplane) الذي يوسع المسافة (Margin) بين الفئات. يمكنها حل مشاكل البيانات غير الخطية باستخدام حيلة النواة <span class="en-term">(Kernel Trick)</span> مثل Gaussian kernel.</li>
+            <li><span class="term">k-NN</span>: خوارزمية تعتمد على تصويت الأغلبية (Majority voting) لأقرب k جيران للبيانات الجديدة. تستهلك حسابات مكثفة لأنها تحسب المسافة مع كل النقاط.</li>
+            <li><span class="term">نايف بايز</span> <span class="en-term">(Naive Bayes)</span>: تعتمد على نظرية الاحتمالات لـ Bayes مع افتراض (ساذج Naive) أن جميع الميزات مستقلة تماماً عن بعضها.</li>
+        </ul>
+    </div>
+
+    <button class="accordion">8. ما هو التعلم التجميعي (Ensemble Learning)؟</button>
+    <div class="panel">
+        <p>هو تدريب عدة نماذج (Learners) معاً ودمج نتائجهم للوصول لدقة أعلى وتقليل التباين (Variance). (حكمة الجمهور - Wisdom of the crowd).</p>
+        <ul>
+            <li><span class="term">Bagging</span>: بناء عدة نماذج بشكل مستقل وأخذ المتوسط/التصويت. مثال: <span class="en-term">Random Forest</span> (يبني أشجار قرار متعددة).</li>
+            <li><span class="term">Boosting</span>: بناء نماذج بالتسلسل، كل نموذج يحاول تصحيح أخطاء النموذج الذي سبقه. قوي جداً ولكنه قد يسبب Overfitting. مثال: <span class="en-term">GBDT, XGBoost, AdaBoost</span>.</li>
+        </ul>
+    </div>
+    
+    <button class="accordion">9. خوارزميات التعلم غير الخاضع للإشراف (Unsupervised Algorithms)</button>
+    <div class="panel">
+        <ul>
+            <li><span class="term">تجميع k-Means</span> <span class="en-term">(k-Means Clustering)</span>: تقسيم البيانات غير المصنفة إلى K مجموعة (Clusters)، بحيث تكون النقاط داخل نفس المجموعة متشابهة جداً، ومختلفة عن المجموعات الأخرى.</li>
+            <li><span class="term">التجميع الهرمي</span> <span class="en-term">(Hierarchical Clustering)</span>: بناء شجرة هرمية للتجميع، إما من أسفل لأعلى (Agglomerative) أو العكس.</li>
+        </ul>
+    </div>
+
+    <button class="accordion">10. كيف يتم تقييم النماذج (Model Evaluation Metrics)؟</button>
+    <div class="panel">
+        <p><strong>أولاً: تقييم الانحدار (Regression):</strong></p>
+        <ul>
+            <li><span class="en-term">MAE (Mean Absolute Error)</span>: متوسط الخطأ المطلق.</li>
+            <li><span class="en-term">MSE (Mean Squared Error)</span>: متوسط مربع الخطأ.</li>
+            <li><span class="en-term">R-squared (R²)</span>: كلما اقتربت من 1، كان تطابق النموذج مع البيانات أفضل.</li>
+        </ul>
+        <p><strong>ثانياً: تقييم التصنيف (Classification):</strong></p>
+        <p>نعتمد على مصفوفة الارتباك <span class="en-term">(Confusion Matrix)</span> وتتضمن TP, TN, FP, FN.</p>
+        <ul>
+            <li><span class="term">الدقة الكلية</span> <span class="en-term">(Accuracy)</span>: نسبة التوقعات الصحيحة من إجمالي البيانات (TP+TN) / Total.</li>
+            <li><span class="term">الإحكام</span> <span class="en-term">(Precision)</span>: من بين كل ما توقعه النموذج بأنه إيجابي، كم عدد الإيجابي الحقيقي؟ (TP / TP+FP).</li>
+            <li><span class="term">الاستدعاء</span> <span class="en-term">(Recall/Sensitivity)</span>: من بين كل الإيجابي الحقيقي، كم استطاع النموذج أن يكتشف؟ (TP / TP+FN).</li>
+            <li><span class="term">درجة F1</span> <span class="en-term">(F1-Score)</span>: المتوسط التوافقي بين الـ Precision و Recall.</li>
+        </ul>
+    </div>
+
+</div>
+
+<div class="footer">
+    تم البرمجة بواسطة جيميناي (Gemini) - مخصص لعبد الله محمد فاروق | بالتوفيق في المقابلة! 🎉
+</div>
+
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    for (var i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+                panel.classList.remove("show");
+            } else {
+                panel.classList.add("show");
+                panel.style.maxHeight = panel.scrollHeight + 40 + "px"; // added 40px to account for padding
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
